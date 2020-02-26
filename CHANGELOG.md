@@ -7,7 +7,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ## NEXT - YYYY-MM-DD
 
 ### Added
-- Nothing
+- updated to wrk with v1.1 of repo `pdo-crud-for-free-repositories`
 
 ### Deprecated
 - Nothing

@@ -7,20 +7,22 @@ All code is (intended :-) to follow PSR-1, PSR-2 coding standards. Classes are f
 
 ## Install
 
-Via Git, then run Composer to install dependencies.
+Via Git:
 
 ``` bash
 $ git clone git@github.com:dr-matt-smith/pdo-crud-for-free-repositories-sample-project.git
-
-$ composer update
 ```
 
-## Setup MySQL database
+Then run Composer to populate the `/vendor` directory with dependencies:
+``` bash
+$ composer install
+```
 
-Run the SQL found in directory `/db`
+## MySQL database settings`/config/db.php`
 
-Set your constants to the appropriate DB name / user / password in `/public/index.php':
+File `/config/db.php` defines the 4 required constants for DB access.
 
+Update them as required for your own MySQL setup:
 ```
 define('DB_HOST', 'localhost');
 define('DB_USER', 'fred');
@@ -28,15 +30,29 @@ define('DB_PASS', 'smith');
 define('DB_NAME', 'evote');
 ```
 
-## Run
+Create the database schema, e.g. `evote` in this example
 
-1. Point your webserver root directory to `/public`.
-1. Run the webserver
-1. Run the MySQL server
-1. Open a browser to `http://localhost`
+## Run the migration and initial data fixtures script
 
-    (with port if required, e.g. `http://localhost:8888` if webserver port IS `8888`)
+In folder `db` is a file `migrateAndLoadFixtures.php`. Run this script to create the DB table `movie`, and insert 2 initial records:
 
+```bash
+php migrateAndLoadFixtures.php
+```
+
+## Run the web server
+
+Run your web server, making `/public` the web root:
+
+```bash
+php -S localhost:8000 -t public
+```
+
+## Open a browser to `http://localhost:8000`
+
+or whatever port your webserver is running at
+
+![screenshot of browser](screenshot.png)
 
 ## Change log
 

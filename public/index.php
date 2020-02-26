@@ -1,45 +1,20 @@
 <?php
+require_once __DIR__ . '/../config/dbConstants.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
-// constants for our DB configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'fred');
-define('DB_PASS', 'smith');
-define('DB_NAME', 'evote');
+use Tudublin\MovieRepository;
+use Tudublin\Movie;
 
-use Evote\DvdRepository;
-use Evote\Dvd;
+// for Car DB actions
+$movieRepository = new MovieRepository();
 
-$dvdRepository = new DvdRepository();
-$dvds = $dvdRepository->getAll();
+$m = new Movie();
+$m->setTitle('pop');
+$m->setPrice(8.01);
+$m->setCategory('(unknown)');
+$movieRepository->create($m);
 
-foreach($dvds as $dvd){
-    /**
-     * @var $dvd Dvd
-     */
-    print PHP_EOL .  'id = ' . $dvd->getId();
-    print PHP_EOL .  '<br>';
-    print PHP_EOL .  'title = ' . $dvd->getTitle();
-    print PHP_EOL .  '<br>';
-    print PHP_EOL .  'category = ' . $dvd->getCategory();
-    print PHP_EOL .  '<p>';
+$movies = $movieRepository->findAll();
 
-}
+var_dump($movies);
 
-print '<hr>';
-
-$dvdsSearch = $dvdRepository->searchByTitleOrCategory('man');
-
-
-foreach($dvdsSearch as $dvd){
-    /**
-     * @var $dvd Dvd
-     */
-    print PHP_EOL .  'id = ' . $dvd->getId();
-    print PHP_EOL .  '<br>';
-    print PHP_EOL .  'title = ' . $dvd->getTitle();
-    print PHP_EOL .  '<br>';
-    print PHP_EOL .  'category = ' . $dvd->getCategory();
-    print PHP_EOL .  '<p>';
-
-}
