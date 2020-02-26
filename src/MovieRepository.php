@@ -1,12 +1,9 @@
 <?php
 namespace Tudublin;
 
-use Mattsmithdev\PdoCrudRepo\DatabaseTableRepository;
-use Mattsmithdev\PdoCrudRepo\DatabaseManager;
 
+use Mattsmithdev\PdoCrudRepo\DatabaseTableRepository;
 
 class MovieRepository extends DatabaseTableRepository
 {
-
-
 }
