@@ -1,6 +1,6 @@
 {
     "require": {
-        "mattsmithdev/pdo-crud-for-free-repositories": "^2.0"
+        "mattsmithdev/pdo-crud-for-free-repositories": "^2"
     },
     "autoload": {
         "psr-4": {
