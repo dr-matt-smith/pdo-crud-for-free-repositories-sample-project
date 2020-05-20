@@ -3,7 +3,7 @@
 
 This sample project illustrates how to use the PHP package `pdo-crud-for-free-repositories`
 
-All code is (intended :-) to follow PSR-1, PSR-2 coding standards. Classes are following the PSR-4 autoloading standard.
+All code is (intended :-) to follow PSR-1, PSR-12 coding standards. Classes are following the PSR-4 autoloading standard.
 
 ## Install
 
@@ -18,16 +18,17 @@ Then run Composer to populate the `/vendor` directory with dependencies:
 $ composer install
 ```
 
-## MySQL database settings`/config/db.php`
+## MySQL database settings`/.env`
 
-File `/config/db.php` defines the 4 required constants for DB access.
+File `.env` defines the 5 required constants for DB access.
 
 Update them as required for your own MySQL setup:
 ```
-define('DB_HOST', 'localhost');
-define('DB_USER', 'fred');
-define('DB_PASS', 'smith');
-define('DB_NAME', 'evote');
+    MYSQL_USER=root
+    MYSQL_PASSWORD=passpass
+    MYSQL_HOST=127.0.0.1
+    MYSQL_PORT=3306
+    MYSQL_DATABASE=evote
 ```
 
 Create the database schema, e.g. `evote` in this example
@@ -37,7 +38,7 @@ Create the database schema, e.g. `evote` in this example
 In folder `db` is a file `migrateAndLoadFixtures.php`. Run this script to create the DB table `movie`, and insert 2 initial records:
 
 ```bash
-php migrateAndLoadFixtures.php
+php movieMigrationAndFixtures.php
 ```
 
 ## Run the web server
@@ -48,7 +49,8 @@ Run your web server, making `/public` the web root:
 php -S localhost:8000 -t public
 ```
 
-## Open a browser to `http://localhost:8000`
+## Open a browser 
+Open a browser to `http://localhost:8000`
 
 or whatever port your webserver is running at
 

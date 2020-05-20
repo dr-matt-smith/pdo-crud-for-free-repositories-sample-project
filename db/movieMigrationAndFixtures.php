@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . '/../config/dbConstants.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Tudublin\Movie;
@@ -26,8 +25,8 @@ $m2->setPrice(9.99);
 $m2->setCategory('entertainment');
 
 // (3) insert objects into DB
-$movieRespository->create($m1);
-$movieRespository->create($m2);
+$movieRespository->insert($m1);
+$movieRespository->insert($m2);
 
 // (4) test objects are there
 $movies = $movieRespository->findAll();
