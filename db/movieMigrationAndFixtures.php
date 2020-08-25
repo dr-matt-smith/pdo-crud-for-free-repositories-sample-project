@@ -7,11 +7,11 @@ use Tudublin\MovieRepository;
 $movieRespository = new MovieRepository();
 
 // (1) drop then create table
-$movieRespository->dropTable();
-$movieRespository->createTable();
+$movieRepository->dropTable();
+$movieRepository->createTable();
 
 // (2) delete any existing objects
-$movieRespository->deleteAll();
+$movieRepository->deleteAll();
 
 // (3) create objects
 $m1 = new Movie();
@@ -25,10 +25,10 @@ $m2->setPrice(9.99);
 $m2->setCategory('entertainment');
 
 // (3) insert objects into DB
-$movieRespository->insert($m1);
-$movieRespository->insert($m2);
+$movieRepository->insert($m1);
+$movieRepository->insert($m2);
 
 // (4) test objects are there
-$movies = $movieRespository->findAll();
+$movies = $movieRepository->findAll();
 print '<pre>';
 var_dump($movies);
