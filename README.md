@@ -1,7 +1,9 @@
 # pdo-crud-for-free-repositories-sample-project
 
 
-This sample project illustrates how to use the PHP package `pdo-crud-for-free-repositories`
+This sample project illustrates how to use the PHP package:
+
+- [pdo-crud-for-free-repositories](https://github.com/dr-matt-smith/pdo-crud-for-free-repositories)
 
 All code is (intended :-) to follow PSR-1, PSR-12 coding standards. Classes are following the PSR-4 autoloading standard.
 
