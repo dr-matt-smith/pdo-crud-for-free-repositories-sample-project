@@ -10,14 +10,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Tudublin\MovieRepository;
 use Tudublin\Movie;
 
-// for Car DB actions
+// create and use repository to add new record to datatabase
 $movieRepository = new MovieRepository();
-
-$m = new Movie();
-$m->setTitle('pop');
-$m->setPrice(8.01);
-$m->setCategory('(unknown)');
-$movieRepository->insert($m);
+$movieRepository->createAndInsert('Jumanji 2', 9.99, 'comedy');
 
 $movies = $movieRepository->findAll();
 
