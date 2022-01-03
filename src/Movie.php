@@ -4,7 +4,7 @@ namespace Tudublin;
 
 class Movie
 {
-    const CREATE_TABLE_SQL =
+    const CREATE_TABLE_SQL99 =
 <<<HERE
 CREATE TABLE IF NOT EXISTS movie (
     id integer PRIMARY KEY AUTO_INCREMENT,
@@ -14,71 +14,71 @@ CREATE TABLE IF NOT EXISTS movie (
 )
 HERE;
 
-    private $id;
-    private $title;
-    private $price;
-    private $category;
+    private int $id;
+    private string $title;
+    private float $price;
+    private string $category;
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
-    public function setId($id)
+    public function setId(int $id): void
     {
         $this->id = $id;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * @param mixed $title
+     * @param string $title
      */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getPrice()
+    public function getPrice(): string
     {
         return $this->price;
     }
 
     /**
-     * @param mixed $price
+     * @param string $price
      */
-    public function setPrice($price)
+    public function setPrice(string $price): void
     {
         $this->price = $price;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getCategory()
+    public function getCategory(): string
     {
         return $this->category;
     }
 
     /**
-     * @param mixed $category
+     * @param string $category
      */
-    public function setCategory($category)
+    public function setCategory(string $category): void
     {
         $this->category = $category;
     }

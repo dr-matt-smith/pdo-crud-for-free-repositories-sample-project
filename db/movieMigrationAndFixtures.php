@@ -13,6 +13,10 @@ $movieRepository->createTable();
 // (2) delete any existing objects
 $movieRepository->deleteAll();
 
+// (3) create & insert objects
+$movieRepository->createAndInsert('Jaws', 9.99, 'horror');
+$movieRepository->createAndInsert('Jumanji', 7, 'entertainment');
+
 // (3) create objects
 // $m1 = new Movie();
 // $m1->setTitle('Jaws');
@@ -24,12 +28,10 @@ $movieRepository->deleteAll();
 // $m2->setPrice(9.99);
 // $m2->setCategory('entertainment');
 
-$movieRepository->createAndInsert('Jaws', 9.99, 'horror');
-$movieRepository->createAndInsert('Jumanji', 7, 'entertainment');
 
 // (3) insert objects into DB
-$movieRepository->insert($m1);
-$movieRepository->insert($m2);
+//$movieRepository->insert($m1);
+//$movieRepository->insert($m2);
 
 // (4) test objects are there
 $movies = $movieRepository->findAll();

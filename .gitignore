@@ -4,3 +4,4 @@ vendor
 .idea
 *.phar
 composer.lock
+/.idea/
