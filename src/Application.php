@@ -6,14 +6,33 @@ class Application
 {
     public function run()
     {
-        // create and use repository to add new record to datatabase
-        $movieRepository = new MovieRepository();
-        $movieRepository->createAndInsert('Jumanji 2', 9.99, 'comedy');
+        // try to find action value from url-encoded variables ...
+        $action = filter_input(INPUT_GET, 'action');
 
-        $movies = $movieRepository->findAll();
+        // decide Response to create for user client ...
+        switch ($action){
+            case 'movies':
+                $this->list_movies();
+                break;
 
-        print '<pre>';
-        var_dump($movies);
+            case 'home':
+            default:
+                $this->index();
+        }
+
     }
 
+    public function index()
+    {
+        require __DIR__ . '/../templates/homepage.php';
+    }
+
+    public function list_movies()
+    {
+        $movieRepository = new MovieRepository();
+        // array 'movies' will be available for use by the PHP template (to loop through)
+        $movies = $movieRepository->findAll();
+
+        require __DIR__ . '/../templates/movies_list.php';
+    }
 }

@@ -82,3 +82,27 @@ Open a browser to `http://localhost:8000`
 or whatever port at which your webserver is running:
 
 ![screenshot of browser](screenshot.png)
+
+
+## About this project
+
+The features of this project can be summaraised as follows:
+
+- a single 'Front Controller' file `public/index.php` creates an `Application` object and invokes its `run()` method
+- the `run()` method tests for a url-encoded variable `action`
+- if url-encoded variable `action` has value `movies` then method `Application->list_movies()` is invoked, otherwise method `Application->index()` is invoked
+- `Application->index()` displays template file `templates/homepage.php` - a basic home page, with a 2-item navigation bar (to home and movie list)
+- `Application->list_movies()` creates a `MovieRepository` object and uses its `findAll()` method to create an array containing `Movie` objects for each row retrieved from the database table `movie`, then displays template file `templates/movies_list.php` - a page that loops through the `$movies` array, and also displays a 2-item navigation bar (to home and movie list)
+
+The `Movie` class is a simple entity class - with an int `id` property, properties for movie objects (like title and price), and public getters and setters.
+
+The `MovieRepository` class extends the library class `Mattsmithdev\PdoCrudRepo\DatabaseTableRepository` (which has been copied by Composer into the `vendor` directory). These library classes provide a **very simple** ORM (Object-Relational Mapper), allowing basic CRUD operations with no need to manually create DB connections or write SQL etc.
+
+For more information about the pdo-crud-for-free-repositories library see that project's Github page:
+
+- [https://github.com/dr-matt-smith/pdo-crud-for-free-repositories](https://github.com/dr-matt-smith/pdo-crud-for-free-repositories)
+
+
+have fun
+
+.. matt smith .. Jan 2022
