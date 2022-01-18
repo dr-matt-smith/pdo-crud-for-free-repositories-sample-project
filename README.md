@@ -33,14 +33,12 @@ Update them as required for your own MySQL setup:
     MYSQL_DATABASE=evote
 ```
 
-Create the database schema, e.g. `evote` in this example
-
 ## Run the migration and initial data fixtures script
 
 In folder `db` is a file `migrateAndLoadFixtures.php`. Run this script to create the DB table `movie`, and insert 2 initial records:
 
 ```bash
-php movieMigrationAndFixtures.php
+php migrateAndLoadFixtures.php
 ```
 
 ## Run the web server
