@@ -81,7 +81,7 @@ Open a browser to `http://localhost:8000`
 
 or whatever port at which your webserver is running:
 
-![screenshot of browser](screenshot.png)
+![screenshot of browser](screenshot2.png)
 
 
 ## About this project
