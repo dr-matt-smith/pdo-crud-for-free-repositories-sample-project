@@ -10,10 +10,10 @@ This sample project illustrates how to use the PHP package:
 All code is (intended :-) to follow PSR-1, PSR-12 coding standards. Classes are following the PSR-4 autoloading standard.
 
 ## Install 1 - Get the files on your computer
-Via Composer with the `create-project` option:
+Via Composer with the `create-project` option, change `demo1` to whatever you want the project folder name to be:
 
 ```bash
-composer create-project organization/name-of-template name-for-new-project
+composer create-project mattsmithdev/pdo-repo-project demo1
 ```
 
 Via Git clone:
