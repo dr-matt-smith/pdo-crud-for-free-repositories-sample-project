@@ -24,15 +24,7 @@ Via Git clone:
 
 Or just download the project ZIP from Github.
 
-## Install 2 - Populate the Composer `/vendor` directory
-
-Then run Composer to populate the `/vendor` directory with dependencies:
-
-``` bash
-    $ composer install
-```
-
-## Install 3 - Declare your MySQL database settings in `/.env`
+## Install 2 - Declare your MySQL database settings in `/.env`
 
 File `.env` defines the 5 required constants for DB access.
 
@@ -51,7 +43,7 @@ NOTE: These variables names are chosen for easy deployment to Fortrabbit [https:
 
 - you'd think they'd want to buy me a coffee or something for advertising them ... :-)
 
-## Install 4 - Run the migration and initial data fixtures script
+## Install 3 - Run the migration and initial data fixtures script
 
 There is a Composer script shortcut setup for you: `"setupdb": "php db/migrateAndLoadFixtures.php"`
 
