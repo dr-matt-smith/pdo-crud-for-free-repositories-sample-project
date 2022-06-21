@@ -27,7 +27,7 @@ class Application
         require __DIR__ . '/../templates/homepage.php';
     }
 
-    public function list_movies()
+    public function listMovies()
     {
         $movieRepository = new MovieRepository();
         // array 'movies' will be available for use by the PHP template (to loop through)
