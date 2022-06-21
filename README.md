@@ -105,4 +105,4 @@ For more information about the pdo-crud-for-free-repositories library see that p
 
 have fun
 
-.. matt smith .. Jan 2022
+.. matt smith .. June 2022
