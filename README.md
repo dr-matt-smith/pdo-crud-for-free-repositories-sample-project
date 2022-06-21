@@ -92,7 +92,7 @@ The features of this project can be summaraised as follows:
 - the `run()` method tests for a url-encoded variable `action`
 - if url-encoded variable `action` has value `movies` then method `Application->list_movies()` is invoked, otherwise method `Application->index()` is invoked
 - `Application->index()` displays template file `templates/homepage.php` - a basic home page, with a 2-item navigation bar (to home and movie list)
-- `Application->list_movies()` creates a `MovieRepository` object and uses its `findAll()` method to create an array containing `Movie` objects for each row retrieved from the database table `movie`, then displays template file `templates/movies_list.php` - a page that loops through the `$movies` array, and also displays a 2-item navigation bar (to home and movie list)
+- `Application->listMovies()` creates a `MovieRepository` object and uses its `findAll()` method to create an array containing `Movie` objects for each row retrieved from the database table `movie`, then displays template file `templates/movies_list.php` - a page that loops through the `$movies` array, and also displays a 2-item navigation bar (to home and movie list)
 
 The `Movie` class is a simple entity class - with an int `id` property, properties for movie objects (like title and price), and public getters and setters.
 
