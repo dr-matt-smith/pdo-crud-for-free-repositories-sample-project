@@ -12,7 +12,7 @@ class Application
         // decide Response to create for user client ...
         switch ($action){
             case 'movies':
-                $this->list_movies();
+                $this->listMovies();
                 break;
 
             case 'home':
