@@ -11,6 +11,7 @@ $movieRepository->resetTable();
 // use handy method added to MovieRepository to create and insert object
 $movieRepository->createAndInsert('Jaws', 9.99, 'horror');
 $movieRepository->createAndInsert('Jumanji', 7, 'entertainment');
+$movieRepository->createAndInsert('Ghost', 8.99, 'romance');
 
 // add new object without using createAndInsert(..,.)
 $jaws2 = new Movie();
